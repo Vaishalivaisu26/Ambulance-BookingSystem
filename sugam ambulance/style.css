@@ -1,0 +1,218 @@
+body {
+    font-family: 'Baloo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #483F3F;
+    font-weight: 300;
+
+}
+
+/* Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ff4d4d;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    /* Default link color */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff4d4d;
+    text-decoration: underline;
+    /* Ensure it's applied */
+}
+
+/* Button Animation */
+.btn-danger {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.5);
+}
+
+.btn-danger::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-danger:hover::before {
+    left: 100%;
+}
+
+
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container-fluid .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.text-end {
+    text-align: right;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    padding: 40px 0;
+}
+
+/* Footer Box Heading */
+.footer .footer-box h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Style for links in the footer */
+.footer a {
+    color: rgb(0, 0, 0);
+    /* Default link color */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Hover effect for links */
+.footer a:hover {
+    color: #f1f1f1;
+    /* Lighter color on hover */
+    background-color: #d9534f;
+    /* Red background color on hover */
+    padding: 2px 4px;
+    /* Optional: Add padding to highlight the link */
+    border-radius: 4px;
+    /* Optional: Add border radius for rounded corners */
+}
+
+/* Footer Box Paragraph and Links */
+.footer .footer-box p,
+.footer .footer-box a {
+    font-size: 14px;
+    color: white;
+    /* Ensure text color is white */
+    text-decoration: none;
+    /* Ensure links are not underlined */
+}
+
+.footer .footer-box a:hover {
+    text-decoration: none;
+    /* Prevent underline on hover */
+}
+
+/* Footer Social Links */
+.footer-socials-links ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-socials-links ul li {
+    display: inline-block;
+    margin-right: 10px;
+    /* Space between social icons */
+}
+
+.footer-socials-links ul li a img {
+    width: 40px;
+    /* Icon size */
+    height: 40px;
+    /* Icon size */
+    border-radius: 50%;
+    /* Make icons circular */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    /* Smooth transform and filter effect */
+}
+
+/* Hover effect for social icons */
+.footer-socials-links ul li a img:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the icon on hover */
+    filter: brightness(1.2);
+    /* Make the icon slightly brighter on hover */
+}
+
+/* Another option for hover effect */
+.footer-socials-links ul li a img:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the icon on hover */
+    filter: grayscale(0.5) sepia(1) brightness(1.2);
+    /* Apply grayscale and sepia effects along with brightness */
+}
+
+
+.review-container {
+    width: 800px;
+    margin: auto;
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+    color: #f39c12;
+}
+
+.star-rating span {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.review-message {
+    font-size: 1.1rem;
+    color: #555;
+}

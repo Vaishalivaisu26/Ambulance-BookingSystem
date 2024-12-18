@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Services Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styling */
+        body {
+
+            /* Custom Styling */
+            body {
+                background-color: #f8f9fa;
+               
+                font-family: Arial, sans-serif;
+                padding-top: 30px;
+                background-image: url('./assests/blog.jpg');
+                background-size: cover;
+                /* Ensure the background covers the entire body */
+                background-position: center center;
+                /* Position the background in the center */
+                background-attachment: fixed;
+                /* Keep the background fixed when scrolling */
+                color: #333;
+                /* Ensure text is dark for readability */
+                position: relative;
+                /* Ensure the overlay stays behind the content */
+                min-height: 100vh;
+                /* Ensure the body covers the full height of the viewport */
+            }
+
+            /* Dark overlay */
+            body::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Darker overlay for better readability */
+                z-index: -1;
+                /* Keep the overlay behind content */
+            }
+
+            /* Container Styling */
+            .container {
+                max-width: 1200px;
+                padding: 0 15px;
+                /* Add some padding on both sides for better spacing */
+                z-index: 1;
+                /* Ensure container stays above the overlay */
+            }
+
+            /* Blog Post Styling */
+            .blog-post {
+                margin-bottom: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                padding: 20px;
+                transition: box-shadow 0.3s ease;
+                margin-top: 30px;
+                z-index: 1;
+                /* Ensure content stays on top of the overlay */
+            }
+
+            .blog-post:hover {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .blog-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #007bff;
+            }
+
+            .blog-content {
+                color: #333;
+                margin-top: 10px;
+            }
+
+            .btn-read-more {
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+                padding: 10px 15px;
+                margin-top: 15px;
+            }
+
+            .btn-read-more:hover {
+                background-color: #0056b3;
+                text-decoration: none;
+            }
+
+            /* Media Query for smaller devices */
+            @media (max-width: 768px) {
+                .blog-post {
+                    padding: 15px;
+                }
+
+                .blog-title {
+                    font-size: 1.25rem;
+                    /* Adjust title size on smaller screens */
+                }
+
+                .btn-read-more {
+                    padding: 8px 12px;
+                    /* Smaller button size on mobile */
+                }
+            }
+
+            /* Custom video container styling */
+            .video-container {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .embed-responsive {
+                position: relative;
+                height: 0;
+                padding-bottom: 56.25%;
+                /* 16:9 aspect ratio */
+                overflow: hidden;
+                max-width: 100%;
+                background: #000;
+            }
+
+            .embed-responsive iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center my-4">Ambulance Services Blog</h1>
+
+        <!-- Blog Posts Row -->
+        <div class="row" id="blog-posts">
+            <!-- Blog posts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for blog posts -->
+    <script>
+        const blogContent = document.getElementById('blog-posts');
+        const blogPosts = [
+            {
+                title: 'How to Handle an Emergency Situation',
+                content: 'When you face an emergency, it is essential to stay calm...',
+                videoSrc: 'https://www.youtube.com/embed/vC2X6YJzTUo' // Corrected video embed URL
+            },
+            {
+                title: 'The Importance of Ambulance Services',
+                content: 'Ambulance services save lives by providing immediate medical attention...',
+                videoSrc: 'https://www.youtube.com/embed/390Qc1nn-Ac' // Corrected video embed URL
+            }
+        ];
+
+        blogPosts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('col-md-4');
+            postDiv.classList.add('blog-post');
+
+            postDiv.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="blog-title">${post.title}</h5>
+                        <p class="blog-content">${post.content}</p>
+                        <a href="https://www.indianredcross.org/fmr/Module2.pdf" class="btn-read-more">Read More</a>
+                        
+                        <!-- Video Section -->
+                        <div class="video-container">
+                            <h3>Watch the Video</h3>
+                            <div class="embed-responsive">
+                                <iframe class="embed-responsive-item" src="${post.videoSrc}" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            blogContent.appendChild(postDiv);
+        });
+    </script>
+
+</body>
+
+</html>

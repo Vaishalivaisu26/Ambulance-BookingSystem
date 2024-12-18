@@ -1,0 +1,73 @@
+.modal-content {
+  
+    color:rgb(24, 23, 23);
+   
+  }
+  .modal-content:hover::before {
+    opacity: 0.2;
+  }
+
+  /* Center the appointment details */
+  .appointment-details {
+    margin-top: 20px;
+    background-color: rgba(46, 66, 75, 0.85); /* Slightly adjusted opacity for better visibility */
+    padding: 25px;
+    border-radius: 12px; /* Rounded corners for a more modern look */
+    color: white;
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 350px; /* Slightly wider box */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adding shadow for a 3D effect */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for fade-in effect */
+    background-image: url('./assests/Group-214.png');
+    
+}
+
+.appointment-details h3 {
+    font-size: 1.6rem; /* Larger heading for visibility */
+    font-weight: bold;
+    margin-bottom: 20px;
+ 
+  
+}
+
+.appointment-details p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color:black;
+}
+
+.appointment-details button {
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Button hover effect */
+}
+
+.appointment-details button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.appointment-details .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.appointment-details .close-btn:hover {
+    color: #ff4d4d; /* Red color on hover for close button */
+}
